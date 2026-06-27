@@ -1,7 +1,9 @@
 🤖 AI PDF Assistant
+
 An offline, privacy-focused AI-powered PDF knowledge assistant. This system uses Retrieval-Augmented Generation (RAG) to semantically search your PDFs and generate context-aware responses with minimal hallucinations—all running locally on your hardware.
 
 🚀 Key Features
+
 Context Isolation: Designed to handle one PDF at a time with a "fresh state," preventing context pollution from previous documents.
 
 Local LLM Inference: Powered by Phi-3 via Ollama.
@@ -15,6 +17,7 @@ Privacy-First: 100% offline; no data ever leaves your machine.
 Clean & Responsive UI: Built with Streamlit for a smooth, casual-but-professional experience.
 
 🛠️ Tech Stack
+
 Frontend: Streamlit
 
 LLM: Phi-3 (via Ollama)
@@ -28,6 +31,7 @@ Vector Database: ChromaDB
 PDF Processing: PyPDF
 
 ⚙️ Prerequisites
+
 Install Ollama: Download and install it from ollama.com.
 
 Pull Required Models:
@@ -57,6 +61,7 @@ Process: The app automatically indexes the PDF into a local chroma_db directory.
 Chat: Ask questions. If you need to switch documents, the "Clear Everything" button in the sidebar wipes the index safely, ensuring your next chat is perfectly accurate to the new file.
 
 📌 Future Improvements
+
 Voice Input: Integration with Whisper for speech-to-text.
 
 Enhanced Document Management: A dashboard to manage, delete, or switch between multiple saved PDFs.
