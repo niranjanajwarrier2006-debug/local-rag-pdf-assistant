@@ -40,7 +40,9 @@ Open your terminal and run:
 Bash
 ollama pull phi3
 ollama pull nomic-embed-text
+
 🚀 Setup & Run Locally
+
 Clone the repository and enter the folder:
 
 Bash
@@ -53,7 +55,9 @@ Run the application:
 
 Bash
 streamlit run app.py
+
 💡 How it works
+
 Upload: Use the sidebar to upload your PDF.
 
 Process: The app automatically indexes the PDF into a local chroma_db directory.
