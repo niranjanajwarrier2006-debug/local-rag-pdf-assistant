@@ -1,55 +1,64 @@
-# 🤖 AI PDF Assistant
+🤖 AI PDF Assistant
+An offline, privacy-focused AI-powered PDF knowledge assistant. This system uses Retrieval-Augmented Generation (RAG) to semantically search your PDFs and generate context-aware responses with minimal hallucinations—all running locally on your hardware.
 
-An offline, privacy-focused AI-powered PDF knowledge assistant. This system uses Retrieval-Augmented Generation (RAG) to semantically search uploaded documents and generate context-aware responses with reduced hallucinations—all running locally without cloud dependency.
+🚀 Key Features
+Context Isolation: Designed to handle one PDF at a time with a "fresh state," preventing context pollution from previous documents.
 
-## 🚀 Features
+Local LLM Inference: Powered by Phi-3 via Ollama.
 
-* **Local LLM Inference:** Powered by `Phi-3` via Ollama.
-* **Persistent Storage:** Uses `ChromaDB` to save vectors locally, allowing your data to persist across application restarts.
-* **Page-Level Citations:** Automatically cites source content by page number.
-* **Smart Embeddings:** Dedicated `nomic-embed-text` model for high-quality semantic vectorization.
-* **Privacy-Focused:** 100% offline execution; no data leaves your machine.
-* **Clean UI:** Streamlit-based chat interface.
+Persistent Vector Storage: Uses ChromaDB for local indexing, ensuring performance is fast and data stays on your machine.
 
-## 🛠️ Tech Stack
+Smart Citations: Automatically cites source content by page number to verify AI claims.
 
-* **Frontend:** Streamlit
-* **LLM:** Phi-3 (via Ollama)
-* **Embeddings:** nomic-embed-text (via Ollama)
-* **Orchestration:** LangChain, LangChain-Ollama, LangChain-Chroma
-* **Vector Database:** ChromaDB
-* **PDF Processing:** PyPDF
+Privacy-First: 100% offline; no data ever leaves your machine.
 
-## ⚙️ Prerequisites
+Clean & Responsive UI: Built with Streamlit for a smooth, casual-but-professional experience.
 
-1.  **Install Ollama:** Download and install it from [ollama.com](https://ollama.com/).
-2.  **Pull Required Models:**
-    Open your terminal and run:
-    ```bash
-    ollama pull phi3
-    ollama pull nomic-embed-text
-    ```
+🛠️ Tech Stack
+Frontend: Streamlit
 
-## 🚀 Setup & Run Locally
+LLM: Phi-3 (via Ollama)
 
-1.  **Clone the repository/Navigate to project folder:**
-    ```bash
-    cd path/to/your/project
-    ```
+Embeddings: nomic-embed-text
 
-2.  **Install dependencies:**
-    ```bash
-    python -m pip install -U langchain-ollama langchain-chroma pypdf streamlit
-    ```
+Orchestration: LangChain
 
-3.  **Run the application:**
-    ```bash
-    python -m streamlit run app.py
-    ```
+Vector Database: ChromaDB
 
-## 📌 Future Improvements
+PDF Processing: PyPDF
 
-* **Voice Input:** Integration with Whisper for speech-to-text.
-* **Document Management:** A dashboard to manage, delete, or switch between uploaded PDFs.
-* **Chat History Persistence:** Saving chat sessions to a database.
-* **Multi-Model Support:** Ability to switch between different LLMs (e.g., Llama 3) via the UI.
+⚙️ Prerequisites
+Install Ollama: Download and install it from ollama.com.
+
+Pull Required Models:
+Open your terminal and run:
+
+Bash
+ollama pull phi3
+ollama pull nomic-embed-text
+🚀 Setup & Run Locally
+Clone the repository and enter the folder:
+
+Bash
+cd path/to/your/project
+Install dependencies:
+
+Bash
+pip install -U langchain-ollama langchain-chroma pypdf streamlit ollama
+Run the application:
+
+Bash
+streamlit run app.py
+💡 How it works
+Upload: Use the sidebar to upload your PDF.
+
+Process: The app automatically indexes the PDF into a local chroma_db directory.
+
+Chat: Ask questions. If you need to switch documents, the "Clear Everything" button in the sidebar wipes the index safely, ensuring your next chat is perfectly accurate to the new file.
+
+📌 Future Improvements
+Voice Input: Integration with Whisper for speech-to-text.
+
+Enhanced Document Management: A dashboard to manage, delete, or switch between multiple saved PDFs.
+
+Multi-Model Support: Add a dropdown to switch between LLMs (e.g., Llama 3) via the UI.
